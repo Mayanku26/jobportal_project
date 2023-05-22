@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Homepage</title>
+    <style>
+      /* CSS styling for the header */
+      header {
+        background-color: #333;
+        padding: 20px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      /* CSS styling for the logo */
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      /* CSS styling for the navigation menu */
+      nav {
+        display: flex;
+      }
+
+      /* CSS styling for the navigation menu items */
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      /* CSS styling for the About Us button */
+      #about-button {
+        background-color: #008CBA;
+      }
+
+      /* CSS styling for the View Jobs button */
+      #job-button {
+        background-color: #f44336;
+      }
+      /* CSS styling for the Employer button */
+      #employer-button {
+        background-color: green;
+      }
+
+      /* CSS styling for the Sign Up and Login buttons */
+      #signup-button, #login-button {
+        background-color: #555555;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">My Company</div>
+      <nav>
+        <a id="about-button" href="#">About Us</a>
+        <a id="employer-button" href="/candidate">candidate portal</a>
+        <a id="signup-button" href="/signup">Sign Up</a>
+        <a id="login-button" href="/login">Login</a>
+      </nav>
+    </header>
+    <body>
+        <span>{{i.email}}</span>
+        <p>{{i.first_name}} {{i.last_name}}</p>
+    </body>
+    <main>
+      <!-- Your main content goes here -->
+    </main>
+  </body>
+</html>

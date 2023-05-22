@@ -1,0 +1,104 @@
+<style>
+	header {
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	  background-color: #f1f1f1;
+	  padding: 10px;
+	}
+
+	nav ul {
+	  display: flex;
+	  list-style-type: none;
+	  margin: 0;
+	  padding: 0;
+	}
+
+	nav ul li {
+	  margin-right: 20px;
+	}
+
+	nav ul li a {
+	  text-decoration: none;
+	  color: #333;
+	}
+
+	.profile {
+	  display: flex;
+	  align-items: center;
+	}
+
+	.profile img {
+	  width: 50px;
+	  height: 50px;
+	  border-radius: 50%;
+	  margin-right: 10px;
+	}
+
+	.profile span {
+	  font-size: 16px;
+	  font-weight: bold;
+	}
+
+	.dropdown {
+	  position: relative;
+	  display: inline-block;
+	}
+
+	.dropdown-content {
+	  display: none;
+	  position: absolute;
+	  z-index: 1;
+	  background-color: #f1f1f1;
+	  min-width: 100px;
+	  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	  padding: 12px 16px;
+	  margin-top: 5px;
+	  right: 0;
+	}
+
+	.dropdown-content a {
+	  display: block;
+	  text-align: left;
+	  color: #333;
+	  font-size: 14px;
+	  text-decoration: none;
+	  margin-bottom: 5px;
+	}
+
+	.dropdown-content a:hover {
+	  background-color: #ddd;
+	}
+
+	.dropdown:hover .dropdown-content {
+	  display: block;
+	}
+</style>
+<header>
+	<nav>
+	  <ul>
+		<li><a href="#">Home</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Services</a></li>
+		<li><a href="#">Contact</a></li>
+    <li><a id="employer-button" href="/recruiter"> Employer-portal </a></li>
+    <li><a id="signup-button" href="/signup"> Sign Up </a></li>
+    <li><a id="login-button" href="/login"> Login </a></li>
+	  </ul>
+	</nav>
+	{% for i in content %}
+	<div class="profile">
+	  <img src="https://via.placeholder.com/150x150.png?text=Profile+Picture" alt="Profile Picture">
+	  <span>{{i.email}}</span>
+	  <div class="dropdown">
+		<button class="dropbtn">Menu</button>
+		<div class="dropdown-content">
+		  <a href="#">{{i.first_name}}</a>
+		  <a href="/candidate_profile/{{i.email}}">My Profile</a>
+		  <a href="#">Settings</a>
+		  <a href="#">Logout</a>
+		</div>
+	  </div>
+	</div>
+	{% endfor %}
+</header>
